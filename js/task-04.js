@@ -9,19 +9,19 @@ function createBoxes(amount) {
     boxesContainer.innerHTML = "";
     let boxSize = 30;
     for(let i = 0; i < amount ; i ++) {
-      boxSize += 10
-    };
-    const box = document.createElement("div");
+      const box = document.createElement("div");
+      boxSize += 30 + i * 10;
     box.style.width = `${boxSize}px`;
     box.style.height = `${boxSize}px`;
     box.style.backgroundColor = getRandomHexColor();
     box.classList.add("box");
     boxesContainer.appendChild(box);
+    };
 };
 
 function destroyBoxes() {
   const boxesContainer = document.getElementById("boxes");
-  boxesContainer.remove();
+  boxesContainer.innerHTML = "";
 };
 
 document.querySelector("[data-create]").addEventListener("click", () => {
